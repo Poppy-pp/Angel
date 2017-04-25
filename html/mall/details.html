@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+	<title>商城详情</title>
+	<link rel="stylesheet" type="text/css" href="../../css/api.css">
+	<link rel="stylesheet" type="text/css" href="../../css/swiper.min.css">
+	<style type="text/css">
+        html, body {
+            background-color:  #EEEFF1;
+            position: relative;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        /*轮播*/
+        .swiper-container {
+            width: 100%;
+            height:40%;
+        }
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            background-color:white;
+            text-align: center;
+        }
+        .swiper-slide img{
+            margin-top: 2%;
+            width:60%;
+        }
+        /*·········正文·········*/
+        .div1{
+            box-sizing: border-box;
+            width:100%;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            padding:5%;
+            padding-top: 5%;
+            position: relative;
+        }
+        .div1>p:nth-child(1){
+            position: relative;
+        }
+        .div1>p:nth-child(1)>span:nth-child(1){
+            color: #f13c34;
+            margin-right: 1em;
+        }
+        .div1>p:nth-child(1)>del{
+            color: #aaa;
+        }
+        .div1>p:nth-child(1)>span:nth-child(3){
+            color: #666;
+            float: right;    
+        }
+        .div1>p:nth-child(2){
+            color: #1e1e1e;
+            margin-top: 1%;
+        }	
+        .div1>p:nth-child(3){
+            color: #666;
+            margin-top: 1%;
+        }
+        .div2{
+            box-sizing: border-box;
+            width: 100%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            background-color: #fff;
+            margin-top: 2%;
+            padding:0 4%;
+        }
+        .div2>p>span:nth-child(1){
+            color: #666;
+            margin-right: 1.25em;
+            line-height: 3em;
+        }
+        .div2>p>span:nth-child(2){
+            color: #fff;
+            text-align: center;
+            display: inline-block;
+            width: 7em;
+            height: 2em;
+            border-radius: 12.5em;
+            background-color: #11A8BB;
+            line-height: 2em;
+        }
+        .div2>p>span:nth-child(3){
+            color: #666;
+            line-height: 3em;
+            float: right;
+        }
+        .spcs{
+            margin-top: 2%;
+            padding:0 1.25em;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+        .spcs p{
+            width: 100%; 
+            height: 3em;
+            font-size: 1em;
+            color: #666;
+            border-bottom: 0.1em solid #ddd;
+            line-height: 3em;
+        }
+        .spcs ul{
+            margin-top: 0.5em;
+        }
+        .spcs li{
+            width: 100%;
+            height: 2.5em;
+            line-height:1em;
+            font-size: 0.9em;
+            color: #999;
+        }
+        .spcs li>span:nth-child(2){
+            color: #1e1e1e;
+            margin-left:2.5em;
+        }
+        #btn{
+            box-sizing: border-box;
+            width: 100%;
+            height: 15%;
+            background-color: #fff;
+            padding: 5% 5%;
+            margin-top: 2%;
+            box-sizing: border-box;
+        }
+        #btn button{
+            border:0.1rem solid #11A8BB;
+            width:45%;
+            float: left;
+            border-radius: 0.3125em;
+            background-color: #11A8BB;
+            color: #fff;
+            font-size: 1.2rem;
+            padding:2% 5%;
+        }
+        #btn button:nth-of-type(1){
+            margin-left: 3%;
+        }
+        #btn button:nth-of-type(2){
+            margin-left: 5%;
+        }
+        #btn div:nth-child(1){
+            width: 49%;
+            height: 80%;
+            border: 0.1em solid #11A8BB;
+            text-align: center;
+            color: #11A8BB;
+            float: left;
+            line-height: 100%;
+            border-radius: 0.3125em;
+        }
+        #btn div:nth-child(2){
+            width: 49%;
+            height: 80%;
+            background-color: #11A8BB;
+            float: right;
+            color: #fff;
+            text-align:center;
+            border-radius: 0.3125em;
+        } 
+        /*回到顶部*/
+        #top{            
+            width:15%;
+            position:fixed;
+            bottom:10%;
+            right:2%;
+            display: none;
+        }
+        #top img{
+            width:100%;
+        }
+        
+        
+	</style>
+</head>
+<body>
+  <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="../../image/mall/trousers.png" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="../../image/mall/trousers2.png" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="../../image/mall/bottle.png" alt="">
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+   </div>
+    <div id="itemBox">
+        <div id="div1" class="div1">
+            <p><span>%price%</span><del>%del%</del><span>%buyer%</span></p>
+            <p>%title%</p>
+            <p>%des%</p>
+        </div>
+        <div class="div2">
+            <p><span>选择型号</span><span>%types%</span><span>- 1 +</span></p>
+        </div>
+        <div class="spcs">
+            <p>商品参数</p>
+            <ul>
+                <li><span>商品名称</span><span>%name%</span></li>
+                <li><span style="word-spacing: 1.7em;">品 牌</span><span>%product%</span></li>
+                <li><span>原产国家</span><span>%country%</span></li>
+                <li><span>适用人群</span><span>%people%</span></li>			
+            </ul>
+        </div>
+	</div>
+	<div id="btn">
+		<button>立即购买</button>
+		<button>加入购物车</button>
+		<div></div>
+	</div>   
+    <a id="top"><img src="../../image/mall/totop.png" alt=""></a>
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript" src="../../script/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="../../js/mallscript.js"></script>
+<script type="text/javascript" src="../../script/swiper.min.js"></script>
+<script type="text/javascript">
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        effect: 'cube',
+        loop: true,
+        autoplay : 3000,
+        autoplayDisableOnInteraction : false,
+        grabCursor: true,
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        cube: {
+            shadow: true,
+            slideShadows: true,
+            shadowOffset: 20,
+            shadowScale: 0.94
+        }
+    }); 
+    /*···································显示数据······························*/
+    apiready = function(){
+        
+        var oBox = $api.byId('itemBox');//获取内容盒子
+        var template = $api.html(oBox);//内容盒子的html内容
+        var str = "";//初始化str
+        
+        /*获取父页name值(商品组下标)*/
+        //alert(JSON.stringify(api.pageParam.name));
+        var itemIndex = JSON.stringify(api.pageParam.name);
+        
+        /*内容盒子赋值*/
+        str = template.replace('%price%',items[itemIndex].price).replace('%del%',items[itemIndex].del).replace('%buyer%',items[itemIndex].buyer).replace('%title%',items[itemIndex].title).replace('%des%',items[itemIndex].des).replace('%types%',items[itemIndex].types).replace('%name%',items[itemIndex].name).replace('%product%',items[itemIndex].product).replace('%country%',items[itemIndex].country).replace('%people%',items[itemIndex].people);
+        $api.html(oBox,str);
+        
+        /*图片盒子赋值*/
+/*        str2 = template2.replace('imgtest',items[itemIndex].img).replace('imgtest2',items[itemIndex].img).replace('imgtest3',items[itemIndex].img);
+        $api.html(oImgBox,str2);*/
+        
+    };
+    /*········································································*/
+    /*··································回到顶部·······························*/
+    
+    /*回到顶部显示隐藏*/
+    $(window).scroll( function() {
+        if(window.document.body.scrollTop>=100){
+            document.getElementById("top").style.display = "block";
+        }
+        else{
+            document.getElementById("top").style.display = "none";
+        }
+    });
+    
+    /*回到顶部按钮*/
+    $('#top').click(function(){
+        document.body.scrollTop = 0;
+    })    
+
+    /*·······································································*/
+
+</script>
+</html>

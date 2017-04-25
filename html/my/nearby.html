@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>摇一摇</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css"/>
+    <style>
+    	body{
+    		
+    	}
+    </style>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript">
+	apiready = function(){
+                  
+		var shakeView = api.require('shakeView');
+                                shakeView.open({
+                                    x: 0,
+                                    y: 0,
+                                    w: api.winWidth,
+                                    h: 300,
+                                    type: 'up_down',
+                                    img: {
+                                        leftUp: 'widget://image/my/shaketop.png',
+                                        rightDown: 'widget://image/my/shakebottom.png',
+                                        bg: 'widget://image/my/black.jpg'
+
+                                    },
+                                    anim: {
+                                        time: '2',
+                                        sound: '',
+                                        isShake: true,
+                                        percent: 50
+                                    }
+                                });
+	};
+</script>
+</html>

@@ -1,0 +1,136 @@
+@charset "UTF-8";
+body{
+	background-color: #EEEFF1;
+}
+/*··········头部········*/
+header{
+	width: 100%;
+	height: 10%;
+	text-align:center;
+	line-height: 5em;
+	background-color: #11A8BB;
+	color: white;
+	font-size: 1.6em;
+	position: relative;
+	font-family: "宋体";
+}
+#img1{
+	position: absolute;
+	left: 5%;
+	top: 20%;
+	width: 3em;
+}
+#div1{
+	position: absolute;
+	width: 60%;
+	height: 3em;
+	border:0.2em solid #A7D6E0;
+	border-radius: 2em;
+	left: 20%;
+	top: 18%;
+}
+#div1 img{
+	position: absolute;
+	left: 5%;
+	top: 15%;
+	width:2em;
+}
+#div1 input{
+	position: absolute;
+	top: 2%;
+	left: 18%;
+	width: 78%;
+	height: 1.8em;
+	font-size: 1.5em;
+	background-color: #11A8BB;
+	border:none;
+	outline:none;
+	color: #9FD4DC;
+}
+#img2{
+	position: absolute;
+	right: 5%;
+	top: 25%;
+	width: 2.5em;
+}
+#div2 span{
+	position: absolute;
+	right: 5%;
+	top: 25%;
+	font-size: 1.3em;
+}
+/*·········正文·········*/
+#ul1{
+	width: 100%;
+	position: absolute;
+	top: 9%;
+}
+#ul1>li{
+	width: 45%;
+	height: 30%;
+	float: left;
+	background-color: #fff;
+	border: 0.2em solid #ddd;
+	padding:1.2em;
+	margin-bottom: 0.7em;
+}
+#ul1>li>img{
+	width: 70%;
+	height: 20em;
+	display: block;
+	margin: 0 auto;
+}
+#ul1>li>p{
+	font-size: 1.7em;
+	color: #333;
+}
+#ul1>li>span:nth-child(3){
+	color: red;
+	font-size: 1.7em;
+	line-height: 1.6em;
+}
+#ul1>li>span:nth-child(4){
+	color: #ddd;
+	font-size: 1.7em;
+	line-height: 1.6em;
+	float: right;
+}
+#ul1:after{
+	content:"";
+	height:0;
+	visibility:hidden;
+	display:block;
+	clear:both;
+}
+/*···········底部··········*/
+footer{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 9.375em;
+	background-color: #F6F6F6;
+	font-family: "微软雅黑";
+}
+footer div{
+	box-sizing: border-box;
+	float: left;
+	width:25%;
+	height: 9.375em;
+	text-align: center;
+	padding-top: 1.5625em;
+}
+footer div img{
+	width: 4.0625em;
+}
+footer div h2{
+	font-size: 2em;
+	color:#818181;
+	font-weight: lighter;
+}
+footer:after{
+	content:"";
+	height:0;
+	visibility:hidden;
+	display:block;
+	clear:both;
+}

@@ -1,0 +1,100 @@
+﻿@charset "UTF-8";
+body{
+	background-color: #EEEFF1;
+}
+/*··········头部········*/
+header{
+	width: 100%;
+	height: 10%;
+	text-align:center;
+	line-height: 5em;
+	background-color: #11A8BB;
+	color: white;
+	font-size: 1.6em;
+	position: relative;
+	font-family: "微软雅黑";
+}
+h1{
+	font-weight: normal;
+}
+/*············正文···········*/
+/*····上部····*/
+#sec1{
+	width: 100%;
+	height: 30em;
+	background: linear-gradient(45deg,#23C2DF,#83D6EC);
+	padding-top: 5em;
+	text-align:center;
+}
+#sec1>a>img{
+	width: 25%;
+}
+#sec1 p{
+	margin-top: 1em;
+	position: relative;
+}
+#sec1 p img{
+	position: absolute;
+	top: 0.5em;
+	left: calc(50% - 7em);
+	width: 1.9em;
+}
+#sec1 p span{
+	font-size: 3em;
+	color: white;
+	margin-left: 0.3em;
+}
+#sec1 div{
+	margin:0.6em auto;
+	width: 8em;
+	height: 2em;
+	line-height: 2em;	
+	border-radius: 1em;
+	background-color: rgba(255,255,255,0.4);
+	font-size: 2.5em;
+	color: #028B9A;
+}
+/*·····下部·····*/
+#sec2{
+	background-color: white;
+	width: 100%;
+	height: 7em;
+	line-height: 7em;
+	border-bottom: 0.2em solid #E9E9E9;
+	position: relative;
+}
+#sec2 img:nth-of-type(1){
+	position: absolute;
+	top: 1.7em;
+	left: 5%;
+	width: 3em;
+}
+#secimg0{
+	position: absolute;
+	top: 1.5em;
+	right: 5%;
+	width: 4em;
+}
+#sec2 span{
+	font-size: 2.6em;
+	position: absolute;
+	left: 15%;
+}
+#secimg{
+	position: absolute;
+	top: 1.7em;
+	right: 5%;
+	width: 1.8em;
+}
+#btn1{
+	margin: 5% 0;
+	margin-left: 6%;
+	width: 88%;
+	height: 2em;
+	border:none;
+	outline:none;
+	background-color: #11A8BB;
+	color: white;
+	font-size:3.5em;
+	border-radius: 0.5em;
+}

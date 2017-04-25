@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>母乳喂养</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css"/>
+    <link rel="stylesheet" href="../../css/common.css"/>
+    <link rel="stylesheet" href="../../css/find.css"/>
+</head>
+<body>
+    <header>
+        <a id="back" href=""><img src="../../image/yuyue/pic000@2x.png" class="ico1"></a>
+        <h1>母乳喂养</h1>
+        <a id="tel" href=""><img src="../../image/发现/edit.png"></a>
+    </header>
+    <section>
+        <ul style="display: none;">
+<!--             <li id="liBox" class="send">
+                    <div class="arrow"></div>
+                    <b></b>
+            </li> -->
+        </ul>
+    </section>
+    <div style="position: fixed;bottom: 0;left:0;width:100%;padding-left: 5%;padding-right: 5%;">
+	    <input style="width:70%;height: 8%;" id="inp" type="test" name="" placeholder="输入内容">
+	<button style="width:20%;height: 8%;" id="btnSend">发送</button>
+	</div>
+</body>
+
+<script src="../../script/apicloud.js"></script>
+<script src="../../script/api.js"></script>
+<script type="text/javascript">
+// 	apiready = function(){
+		
+// 		var inputField = api.require('inputField');
+// 							//var oP = document.getElementById('oP');
+//                             inputField.open({//打开输入框
+//                             	bgColor: '#fff',
+//                             	lineColor: '#ccc',
+//                             	fileBgColor: '#fff',
+//                             	borderColor: '#ccc',
+//                             	sendImg: '../image/send.png',
+//                             	fixedOn: api.frameName,
+//                             	placeholder:"输入内容",
+//                             	sendBtn:{
+//                                      bg: '#E7E7E7',    //按钮背景色      
+//                                      bgHighlight: '#CCDBCA', //发送按钮点击时
+//                                      title: '发送',        //发送按钮的标题
+//                                      titleSize: 16,    //发送按钮的字体大小
+//                                      titleColor: '#000',  //发送按钮标题文字颜色  
+//                                      corner: 5,            //发送按钮圆角大小
+//                                  },
+//                              }, function(ret, err) {                             	
+//                                  // alert(JSON.stringify(ret.msg));
+//                                 // var oB=document.getElementsByTagName("b")[0];//获取b标签
+//                                  //var oUl=document.getElementsByTagName("ul")[0];
+//                                 // //  oB.innerHTML=ret.msg;
+//                                 //oUl.style.display="block"; 
+//                             });
+
+// }
+var btnSend = document.getElementById('btnSend');
+var oInp = document.getElementById('inp');
+var liBox = document.getElementById('liBox');
+btnSend.onclick = function(){
+	var oUl=document.getElementsByTagName("ul")[0];
+	oUl.style.display="block"; 
+
+	var oLi = document.createElement('li');
+	var oDiv =document.createElement('div');
+	var oB = document.createElement('b');
+
+	oLi.appendChild(oDiv);
+	oLi.appendChild(oB);
+	oDiv.className ='arrow';
+	oLi.className ='send';
+	oB.innerHTML = oInp.value;
+
+	oUl.appendChild(oLi);
+}
+//关闭打开的页面
+var back=$api.dom("#back");
+back.onclick=function(){
+        api.closeWin();
+}
+</script>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>预约挂号-预约支付</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="../../../css/yuyuestyle.css" rel="stylesheet">
+ <script type="text/javascript" src="../../../js/order-yuyue.js"></script>
+ <script type="text/javascript" src="../../../script/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+<!-- 头部 -->
+<header style="margin-top: 3em;">
+	<div><i>预约支付</i></div>
+	<a href="" ><img src="../../../image/yuyue/pic000@2x.png" class="ico1"></a>
+</header>
+    
+
+<!-- 内容 -->
+<section class="doctor2">
+	
+	<!-- 医生信息 -->
+	<div  class="doctorNi" style="height: 17em;">
+		<p>倪寿菱<br>
+		<i>安琪儿妇产科专家</i></p>
+		<span>副主任医生 门诊部主任</span>
+		<img src="../../../image/yuyue/ic_pic02@2x.png" class="doctor2_img">
+		<div id="order_time" style="margin-top: 17em;">
+			<img src="../../../image/yuyue/Clock22@3x.png">
+			<p>预约时间</p>
+			<span id="showTime" ></span>
+		</div>
+	</div>
+
+
+	<!-- 就诊卡信息 -->
+	<div id="ul_info">
+		<ul>
+			<li>就诊卡信息</li>
+			<li>姓 名 <input type="text" placeholder=" 必填" class="info_input"></li>
+			<li>性 别 <input type="text" placeholder=" 必填" class="info_input"></li>
+			<li>出生日期 <input type="text" placeholder=" 必填" class="info_input"></li>
+		</ul>
+	</div>
+
+
+	
+	<!-- 红色提示 -->
+	<i class="info_i1">支付成功后请到院内【客服中心】领取就诊卡</i>
+
+	<!-- 支付金额 -->
+	<div class="order_money">
+			<p>支付金额</p>
+			<span>¥50.00</span>
+	</div>
+
+
+	<!-- 支付方式 -->
+	<i class="info_i2">选择支付方式</i>
+
+
+	<!-- 微信支付宝支付 -->
+	<aside id="sec3">
+	<div class="order_style">
+			<img src="../../../image/yuyue/weixin@2x.png">
+			<p>微信支付</p>
+			<img src="../../../image/B超预约/B超预约-预约支付/Rounded_t.png" class="check">
+	</div>
+	<div class="order_style" style="margin-top: 0;">
+			<img src="../../../image/yuyue/zhifubao@2x.png">
+			<p>支付宝支付</p>
+			<img src="../../../image/B超预约/B超预约-预约支付/Rounded_f.png" class="check">
+	</div>
+	</aside>
+
+
+	<!--  支付按钮-->
+	<button id="pay" class="pay_btn"><font style="font-size: 4em;">立即支付</font></button>
+</section>
+
+<!-- 预约时间 -->
+<div id="order_time" style="display: none;">
+			<ul class="time">
+				<a href=""><li>2017-04-03&nbsp; 周一<button><font style="font-size: 3em;">已满</font></button></li></a>
+
+				<a href=""><li>2017-04-04&nbsp; 周二<button><font style="font-size: 3em;">预约</font></button></li></a>
+
+				<a href=""><li>2017-04-05&nbsp; 周三<button><font style="font-size: 3em;">预约</font></button></li></a>
+
+				<a href=""><li>2017-04-06&nbsp; 周四<button><font style="font-size: 3em;">已满</font></button></li></a>
+
+				<a href=""><li>2017-04-07&nbsp; 周五<button><font style="font-size: 3em;">已满</font></button></li></a>
+
+				<a href=""><li>2017-04-10&nbsp; 周一<button><font style="font-size: 3em;">预约</font></button></li></a>
+
+				<a href=""><li>2017-04-11&nbsp; 周二<button><font style="font-size: 3em;">已满</font></button></li></a>
+
+				<a href=""><li>2017-04-12&nbsp; 周三<button><font style="font-size: 3em;">预约</font></button></li></a>
+
+				<a href=""><li>2017-04-13&nbsp; 周四<button><font style="font-size: 3em;">已满</font></button></li></a>
+
+				<a href=""><li>2017-04-14&nbsp; 周五<button><font style="font-size: 3em;">预约</font></button></li></a>
+
+				<a href=""><li>2017-04-17&nbsp; 周一<button><font style="font-size: 3em;">预约</font></button></li></a>
+
+			</ul>
+</div>
+
+</body>
+<script type="text/javascript" src="../../../script/api.js"></script>
+<script type="text/javascript" src="../../../script/apicloud.js"></script>
+<script type="text/javascript">
+	apiready = function(){
+		var getIndex=api.pageParam.index;//得到上个页面传来的index
+		// alert("index"+"=="+getIndex);
+		var oSpanTime=$api.byId("showTime");//得到显示时间的span
+		var oSpanTimeVal=$api.html(oSpanTime);//得到span的文本
+		var str=$("#order_time li").eq(getIndex).text().substring(0, 14);;//获取当前传入来的下标对应的li的文本，并截取前15个字符
+		var showTime=oSpanTimeVal.replace("",str);//替换sapn原有文本
+		$api.html(oSpanTime,showTime);//显示
+
+
+
+
+
+//关闭页面
+	var left=$api.dom(".ico1");
+	left.onclick=function(){
+		api.closeWin();
+	}
+
+	};
+</script>
+</html>

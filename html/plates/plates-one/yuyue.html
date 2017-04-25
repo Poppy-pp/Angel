@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+<title>预约挂号</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="../../../css/yuyuestyle.css" type="text/css" rel="stylesheet">
+
+</head>
+<body>
+<!-- 头部 -->
+<header>
+	
+	<div><i>选择科室</i></div>
+	<a href="../../../index.html"><img src="../../../image/yuyue/pic000@2x.png" class="ico1"></a>
+	<a href=""><img src="../../../image/yuyue/phone@2x.png" class="ico2">
+	<i class="ask">咨询热线</i></a>
+</header>
+
+<!-- 内容 -->
+<section>
+	<ul>
+		<a href=""><li>产科中心</li>
+		<img src="../../../image/yuyue/pic00001@2x.png"></a>
+		<a href="fukecenter.html"><li>妇科中心</li>
+		<img src="../../../image/yuyue/pic00001@2x.png"></a>
+		<a href=""><li>不孕不育中心</li>
+		<img src="../../../image/yuyue/pic00001@2x.png"></a>
+		<a href=""><li>新生儿中心</li>
+		<img src="../../../image/yuyue/pic00001@2x.png"></a>
+	</ul>
+</section>
+</body>
+<script type="text/javascript">
+	var aLi=document.getElementsByTagName("li");
+	
+	for(var i = 0, length1 = aLi.length; i < length1; i++){
+		aLi[i].onclick = function(){
+			var index = Array.prototype.indexOf.call(aLi, this);//获取点击的下标
+        			// console.log(index); 
+        			if (index==1){
+        			}else {
+        				alert("该功能尚未开通"+ "\n" +"请选择-妇科中心");
+        			}
+        		}
+        	}	
+</script>
+</html>

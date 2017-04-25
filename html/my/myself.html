@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>个人信息</title>
+	<link rel="stylesheet" href="../../css/common.css"/>
+	<link rel="stylesheet" href="../../css/myself.css"/>
+</head>
+<body>
+	<header>
+		<a id="back" href="my.html">
+			<img id="backimg" src="../../image/B超预约/pic000@3x.png">
+		</a>	
+		<h1>个人信息</h1>
+	</header>
+	<section id="sec1">	
+		<img src="../../image/我的/我的病人_25.png"><br />
+		<a href=""><span>修改头像</span></a>
+	</section>
+	<p class="p1">基础信息</p>
+	<article>
+		<section id="sec2">
+			<p>
+				<span>姓名 </span>
+				<span> 王晓倩</span>
+			</p>
+		</section>
+		<section id="sec2">
+			<p>
+				<span>性别 </span>
+				<span> 女</span>
+			</p>
+		</section>
+		<section id="sec2">
+			<p>
+				<span>生日 </span>
+				<span> 1989-08-08</span>
+			</p>
+		</section>
+		<section id="sec2">
+			<p>
+				<span>末次月经 </span>
+				<span> 2016-05-16</span>
+			</p>
+		</section>
+		<section id="sec2">
+			<p>
+				<span>怀孕周期 </span>
+				<span> 5周</span>
+			</p>
+		</section>
+		<section id="sec2">
+			<p>
+				<span>VIP卡号</span>
+				<span>0000 0000 2016 0001</span>
+			</p>
+		</section>
+	</article>
+
+	<script type="text/javascript" src="../../script/api.js"></script>
+	<script type="text/javascript" src="../../script/apicloud.js"></script>
+	<script type="text/javascript">
+		apiready = function() {
+			var img =$api.byId("sec1");
+			img.onclick=function(){
+				api.actionSheet({
+					title : '选择方式',
+					cancelTitle : '取消',
+					buttons : ['拍照', '从手机相册选择','保存图片']
+				}, function(ret, err) {
+					if (ret) {
+						var index = ret.buttonIndex;
+							if(index==1){
+								apicloud.getCamera();//调用相机方法
+							}else if(index==2){
+								apicloud.getAlbum();//调用相册方法
+							}else if(index==3){
+								apicloud.savePicture();//调用保存图片方法	
+							}
+					}
+				});
+				}
+			}; 
+	</script>
+</body>
+</html>

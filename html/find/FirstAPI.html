@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+	<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+	<title>第一页</title>
+	<link rel="stylesheet" type="text/css" href="../../css/api.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/style.css"/>
+	<link rel="stylesheet" href="../../css/find.css"/>
+</head>
+<body style="background:#EEEFF1; ">
+	<div class="empty">
+		<article class="art2">
+			<p>母乳喂养圈子<span>+</span></p>
+			<div>
+				<label>母乳喂养<br>
+					Angel : 欢迎加入~ </label>
+				<img src="../../image/index/banner-min.png">
+			</div>
+		</article>
+		<article class="art2">
+			<p>母乳喂养圈子<span>+</span></p>
+			<div>
+				<label>健康数据<br>
+					Angel : 欢迎加入~ </label>
+				<img src="../../image/index/banner-min.png">
+			</div>
+		</article>
+		<article class="art2" style="display: none;">
+			<p>母乳喂养圈子<span>+</span></p>
+			<div>
+				<label>其他讨论区<br>
+					Angel : 欢迎加入~ </label>
+				<img src="../../image/index/banner-min.png">
+			</div>
+		</article>
+		<article class="art2" style="display: none;">
+			<p>母乳喂养圈子<span>+</span></p>
+			<div>
+				<label>宝妈训练营<br>
+					Angel : 欢迎加入~ </label>
+				<img src="../../image/index/banner-min.png">
+			</div>
+		</article>
+	</div>
+
+
+
+
+<script src="../../script/apicloud.js"></script>
+<script src="../../script/api.js"></script>
+<script>
+	apiready = function(){
+		/*下拉刷新*/
+		api.setRefreshHeaderInfo({	
+				loadingImg: 'widget://image/refresh.png',
+				bgColor: '#ccc',
+				textColor: '#fff',
+				textDown: '下拉刷新...',
+				textUp: '松开刷新...'
+			}, function(ret, err) {
+			setTimeout(function(){
+				api.refreshHeaderLoadDone()  
+			},1000);
+		});
+
+		/*上拉刷新*/
+		api.addEventListener({
+			name:'scrolltobottom',
+			extra:{
+			threshold:-10            //设置距离底部多少距离时触发，默认值为0，数字类型
+		}
+		}, function(ret, err) {
+			api.showProgress({
+				title: '加载圈子中',
+				text: '稍等...',
+				modal: true
+			});
+			setTimeout(function(){
+				close();   //两秒后服务器返回数据
+				show();
+			},1500)		
+		});
+	}  
+	/*关闭提示框*/
+	function close(){
+		api.hideProgress();
+	}
+	// 显示隐藏数据
+	function show(){
+		var aArticle=$api.domAll("article");
+		for(var i = 0, length1 = aArticle.length; i < length1; i++){
+			if (aArticle[i].style.display=="none") {
+				aArticle[i].style.display="block";
+			}
+		}
+	}
+</script>
+</body>
+<script type="text/javascript">
+	var aLi=document.getElementsByTagName("article");
+	
+	for(var i = 0, length1 = aLi.length; i < length1; i++){
+		aLi[i].onclick = function(){
+			var index = Array.prototype.indexOf.call(aLi, this);
+        			if (index==0){
+        				 apicloud.openWin("firstItem","firstItem.html");
+        			}else {
+        				alert("该功能尚未开通"+ "\n" +"请选择-母乳喂养");
+        			}
+        		}
+        	}	
+</script>
+</html>
+
+
+
+
+
+

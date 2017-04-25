@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>fukecenter</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="../../../css/yuyuestyle.css" rel="stylesheet">
+</head>
+<body>
+<!-- 头部 -->
+<header>
+	
+	<div><i>妇科中心</i></div>
+	<a href="yuyue.html"><img src="../../../image/yuyue/pic000@2x.png" class="ico1"></a>
+</header>
+
+<!-- 内容 -->
+<section class="fuke">
+
+	<!-- 搜索框 -->
+	<div class="search">
+		<input type="text" placeholder="搜索你想找的医生"  class="search_input">
+		<img src="../../../image/yuyue/形状-10@2x.png" class="search_img">
+	</div>
+
+	<!-- 医生列表 -->
+	<ul class="fuke_ul">
+		<a href=""><li><p>隆玉华
+		<i>安琪儿妇产医院医学专家</i></p>
+		<span>主任医生 成都安琪儿妇产医院院长</span></li>
+		<img src="../../../image/yuyue/ic_pic01@2x.png" class="doctor">
+		<img src="../../../image/yuyue/pic00001@2x.png" style="margin-top: -8em;"></a>
+		
+		<a href="docutorNi.html"><li><p>倪寿菱
+		<i>安琪儿妇产科专家</i></p>
+		<span>副主任医生 门诊部主任</span></li>
+		<img src="../../../image/yuyue/ic_pic02@2x.png" class="doctor">
+		<img src="../../../image/yuyue/pic00001@2x.png" style="margin-top: -8em;"></a>
+
+		<a href=""><li><p>陈红
+		<i>安琪儿妇产医院妇产科专家</i></p>
+		<span>主任医师 安琪儿妇产医院医师</span></li>
+		<img src="../../../image/yuyue/ic_pic01@2x.png" class="doctor">
+		<img src="../../../image/yuyue/pic00001@2x.png" style="margin-top: -8em;"></a>
+
+		<a href=""><li><p>杨文邦
+		<i>安琪儿妇产医院妇产科专家</i></p>
+		<span>主任医师 安琪儿妇产医院医师</span></li>
+		<img src="../../../image/yuyue/ic_pic02@2x.png" class="doctor">
+		<img src="../../../image/yuyue/pic00001@2x.png" style="margin-top: -8em;"></a>
+
+		<a href=""><li><p>高竞
+		<i>安琪儿妇产医院妇产科专家</i></p>
+		<span>主任医师 安琪儿妇产医院医师</span></li>
+		<img src="../../../image/yuyue/ic_pic01@2x.png" class="doctor">
+		<img src="../../../image/yuyue/pic00001@2x.png" style="margin-top: -8em;"></a>
+
+		<a href=""><li><p>刘敏华
+		<i>安琪儿妇产医院妇产科专家</i></p>
+		<span>主任医师 安琪儿妇产医院医师</span></li>
+		<img src="../../../image/yuyue/ic_pic02@2x.png" class="doctor">
+		<img src="../../../image/yuyue/pic00001@2x.png" style="margin-top: -8em;"></a>
+
+		<a href=""><li><p>袁守红
+		<i>安琪儿妇产医院妇产科专家</i></p>
+		<span>主任医师 安琪儿妇产医院医师</span></li>
+		<img src="../../../image/yuyue/ic_pic01@2x.png" class="doctor">
+		<img src="../../../image/yuyue/pic00001@2x.png" style="margin-top: -8em;"></a>
+
+		<a href=""><li><p>李晓霞
+		<i>安琪儿妇产医院妇产科专家</i></p>
+		<span>主任医师 安琪儿妇产医院医师</span></li>
+		<img src="../../../image/yuyue/ic_pic02@2x.png" class="doctor">
+		<img src="../../../image/yuyue/pic00001@2x.png" style="margin-top: -8em;"></a>
+
+		<div style="clear: both;"></div>
+	</ul>
+</section>
+
+<script src="../../../script/apicloud.js"></script>
+<script>
+apiready = function(){
+	
+api.addEventListener({
+	name:'scrolltobottom',
+	extra:{
+		threshold:0            //设置距离底部多少距离时触发，默认值为0，数字类型
+	}
+}, function(ret, err) {
+	// 弹窗刷新
+	api.showProgress({
+		title: '努力加载中',
+		text: '先喝杯茶吧...',
+		modal: true
+	});
+	setTimeout(function(){
+		close();   //两秒后服务器返回数据
+	},2000)		
+});
+}  
+ /*关闭提示框*/
+function close(){
+	api.hideProgress();
+}
+
+</script>
+
+</body>
+<!-- 提示 -->
+<script type="text/javascript">
+	var aLi=document.getElementsByTagName("li");
+	
+	for(var i = 0, length1 = aLi.length; i < length1; i++){
+		aLi[i].onclick = function(){
+			var index = Array.prototype.indexOf.call(aLi, this);//获取点击的下标
+        			if (index==1){
+        			}else {
+        				alert("该医师暂未上线"+ "\n" +"请选择-倪寿菱");
+        			}
+        		}
+        	}	
+</script>
+</html>

@@ -1,0 +1,139 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2017-01-18 10:32:45
+ * @version $Id$
+ */
+ *{
+ 	font-size: 6px;
+ }
+body,header,div,ul,li,p{
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+}
+li,button{
+	cursor: pointer;
+}
+
+header{			/*头部*/
+	width: 100%;
+}
+header div{			/*头部-绿色部分*/
+	width: 100%;
+	background-color: #89D3DE;
+	height: 7em;
+	text-align: center;
+	line-height: 7em;
+}
+header div i{			/*头部-绿色部分标题*/
+	font-size:3em;
+	font-family: "微软雅黑";
+	font-style: normal;
+	color: #fff;
+}
+.ico1{
+	width: 3.5em;
+	height:2.5em;
+	margin-left: 2em;
+	margin-top: -5em;
+	transform: rotate(90deg);
+	float: left;
+}
+.ico2{
+	width: 4em;
+	height:4em;
+	margin-right: 2em;
+	margin-top: -5em;
+	float: right;
+}
+/*内容*/
+section{
+	width: 100%;
+	margin-top: 1em;
+	background-color: #edeff1;
+}
+section ul{
+	width: 100%;
+	height: 37em;
+	background-color: #fff;
+}
+section a{
+	display: block;
+	border-bottom: 1px solid #ddd;
+}
+section li{
+	list-style: none;
+	font-size: 2.8em;
+	font-family: "微软雅黑";
+	color: #1e1e1e;
+	height: 4.4em;
+	line-height: 3.5em;
+	margin-left: 1em;
+}
+section a:hover,section li:hover{
+	background-color: #f7f7f7;
+	color: #11aBbb;
+}
+section li span{
+	border:1px solid #ff3333;
+	padding: 0.1em 1em;
+	color: #ff3333;
+	border-radius: 0.2em;
+	font-size: 1em;
+}
+section li i{
+	float: right;
+	font-style: normal;
+	margin-right: 1em;
+	font-size: 1em;
+}
+section li p{
+	color: #999;
+	font-size: 0.9em;
+	margin-top: -1.8em;
+}
+.money_all{
+	width: 100%;
+	border:none;
+	border-top: 2px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	height:8em;
+	background-color: #fff;
+	margin-top: 2.5em;
+}
+.money_all p{
+	font-size: 2.5em;
+	font-family: "微软雅黑";
+	color: #1e1e1e;
+	margin: 0.9em 0 0 1em;
+}
+.money_all span{
+	font-size: 3.5em;
+	font-family: "微软雅黑";
+	color: #ff0404;
+	float: right;
+	margin: -1em 1em 0 0;
+}
+.btn_div{
+	width: 100%;
+	text-align: center;
+}
+.next_btn{
+	margin: 5em 0 3em 0;
+	width: 95%;
+	height: 9em;
+	background-color: #11A8BB;
+	border-radius: 0.8em;
+	border: 0;
+	color: #fff;
+	font-family: "微软雅黑";
+	outline: none;
+	display: inline;
+}
+.next_btn:hover{
+	background-color: #14CCE0;
+}

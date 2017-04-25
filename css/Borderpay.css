@@ -1,0 +1,266 @@
+﻿@charset "UTF-8";
+/******
+*******
+预约支付
+*******
+******/
+body{
+	background-color: #EEEFF1;
+	margin-top: 0;
+}
+/*··········头部········*/
+header{
+	width: 100%;
+	height: 10%;
+	text-align:center;
+	line-height: 5em;
+	background-color: #89D3DE;
+	color: white;
+	font-size: 1.5em;
+	position: relative;
+	font-family: "微软雅黑";
+}
+h1{
+	font-weight: normal;
+}
+#backimg{
+	width: 2.1875em;
+	position: absolute;
+	left: 1.175em;
+	top: 1.875em;
+	transform: rotateZ(90deg);
+}
+#tel{
+	position: absolute;
+	right: 0.9375em;
+	top: 0.6375em;
+}
+#tel img{
+	width: 5.125em;
+}
+/*············正文···········*/
+article{
+	width: 100%;
+	background-color: #FFFFFF;
+}
+section{
+	width: 100%;
+	height: 26%;
+	position: relative;
+}
+#sec1{
+	width: 100%;
+	height: 8em;
+	line-height: 8em;
+	border-bottom:0.3125em solid #EEEFF1;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+#sec1 img{
+	position: absolute;
+	right: 4.375em;
+	width: 1.875em;
+	top: 2.9em;
+	transform: rotateZ(90deg);
+}
+#sec1 span{
+	margin-left: 1em;
+	font-size: 3em;
+	font-family: "微软雅黑";
+}
+/*·······日期·······*/
+.datetext{
+	background-color: white;
+	position: relative;
+	padding: 1em;
+	padding-bottom: 2em;
+}
+.datetext>div{
+	margin:0 auto;
+	width: 94%;
+	height: 5em;
+	border:0.3em solid #62C6D0;
+	position: relative;
+}
+.textinp{
+	position: absolute;
+	width: 80%;
+	height: 1.8em;
+	left: calc(50% - 38%);
+	border:none;
+	outline:none;
+	font-size: 2.5em;
+	line-height: 5em;
+	margin-top: 0.15em;
+}
+.datetext>div>img{
+	position: absolute;
+	left: 3%;
+	z-index: 1;
+	width: 4em;
+	top: 0.7em;
+}
+.p1{
+	width: 94%;
+	color: red;
+	font-size: 1.8em;
+	margin: 0 auto;
+}
+.ul1{
+	width: 100%;
+	margin: 0.9375em auto;
+	height: 4em;
+}
+.ul1 li{
+	border:0.0625em solid #DADADA;
+	width: 10em;
+	float: left;
+	height:5em;
+	margin-right: 2em;
+	border-radius: 1em;
+	text-align: center;
+	padding-top: 0.4em;
+	padding-bottom: 0.4em;
+}
+.ul1 li p{
+	font-size: 1.9em;
+	color: black;
+}
+.ul1>li:nth-child(1)>p:nth-child(1){
+	font-size: 1.9em;
+	color: #11A8BB;
+}
+.ul1>li:nth-child(1){
+	border:0.0625em solid #11A8BB;
+}
+.ul1:after{
+	content:"";
+	height:0;
+	visibility:hidden;
+	display:block;
+	clear:both;
+}
+/*··········就诊卡信息·········*/
+.art2{
+	margin:1em auto;
+	width: 90%;
+	height: 25em;
+	border:0.3em solid #11A8BB;
+	border-radius: 1em;
+	position: relative;
+}
+.art2>p{
+	margin-top: -0.02em;
+	box-sizing: border-box;
+	height: 18%;
+	width: 100%;
+	color: white;
+	background-color: #11A8BB;
+	border-radius: 0.05em;
+	font-size: 2.5em;
+	position: relative;
+	padding: 0.3em;
+	padding-top: 0.4em;
+}
+.art2>p>span{
+	position: absolute;
+	right: 0.4em;
+	font-size: 2em;
+	display: inline-block;
+	top: -0.25em;
+}
+.art2 div{
+	box-sizing: border-box;
+	border-top: 0.0625em solid #E0E0E0; 
+	width: 100%;
+	height: 5em;
+}
+.art2 div label{
+	font-size: 2.5em;
+}
+.art2 div input{
+	border:none;
+	outline:none;
+	width: 72%;
+	font-size: 2.5em;
+	margin-left: 0.5em;
+	padding-top: 0.7em;
+}
+.p2{
+	width: 90%;
+	color: red;
+	font-size: 1.8em;
+	margin: 0.5em auto;
+	margin-top: -0.5em;
+}
+.sec2{
+	background-color: white;
+	width: 100%;
+	height: 2.5em;
+	font-size: 2.5em;
+	line-height: 2.5em;
+	position: relative;
+}
+.sec2 span:nth-of-type(1){
+	position: absolute;
+	left: 5%;
+}
+.sec2 span:nth-of-type(2){
+	position: absolute;
+	right: 6%;
+	color: red;
+}
+.p3{
+	width: 90%;
+	color: #666666;
+	font-size: 2em;
+	margin: 0.3em auto;
+}
+.sec3{
+	background-color: white;
+	width: 100%;
+	height: 5em;
+	font-size: 2.5em;
+	line-height: 2.5em;
+	position: relative;
+}
+.sec3>div{
+	box-sizing: border-box;
+	width: 100%;
+	margin: 0 auto;
+	padding-left: 1em;
+	padding-right: 1em;
+	position: relative;
+}
+.sec3>div:nth-child(1){
+	border-bottom: 0.0625em solid #E0E0E0;
+}
+.sec3 .sec3img1{
+	position: absolute;
+	left: 5%;
+	top: 0.5em;
+	width: 1.5em;
+}
+.sec3 .sec3img2{
+	position: absolute;
+	right: 5%;
+	top: 0.5em;
+	width: 1.5em;
+}
+.sec3 span{
+	margin-left: 10%;
+}
+.pay_btn{
+	margin: 2em 0em 1em 1em;
+	width: 93%;
+	height: 5em;
+	background-color: #FF9C00;
+	border-radius: 1em;
+	border: 0;
+	color: #fff;
+	font-family: "微软雅黑";
+	outline: none;
+}
+.pay_btn:hover{
+	background-color: #FFB951;
+}

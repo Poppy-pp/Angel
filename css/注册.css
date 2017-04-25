@@ -1,0 +1,86 @@
+﻿@charset "UTF-8";
+body{
+	background-color: #EEEFF1;
+}
+/*··········头部········*/
+header{
+	width: 100%;
+	height: 10%;
+	text-align:center;
+	line-height: 5em;
+	background-color: #11A8BB;
+	color: white;
+	font-size: 1.6em;
+	position: relative;
+	font-family: "微软雅黑";
+}
+#backimg{
+	width: 2.1875em;
+	position: absolute;
+	left: 1.175em;
+	top: 1.875em;
+	transform: rotateZ(90deg);
+}
+/*············正文···········*/
+#sec1{
+	box-sizing: border-box;
+	width: 100%;
+	margin-top: 4%;
+	position: relative;
+	background-color:#FFFFFF;
+}
+#sec1 div{
+	width: 100%;
+	height: 9em;
+	line-height: 9em;
+	border-bottom: 0.2em solid #EEEFF1;
+	margin-bottom: 1em;
+	position: relative;
+}
+#sec1 div img{
+	margin-top: 0.5em;
+	margin-left: 5%;
+	width: 1em;
+	font-size: 3.5em;
+	color: #666666;
+}
+#sec1 input:nth-of-type(1){
+	width: 55%;
+	position: absolute;
+	left: 15%;
+	height: 2.5em;
+	font-size: 3em;
+	border:none;
+	outline:none;
+	top: 5%;
+}
+#sec1 div:nth-of-type(3) input:nth-of-type(1){
+	width: 80%;
+}
+#sec1 div:nth-of-type(4) input:nth-of-type(1){
+	width: 80%;
+}
+#number1{
+	width: 20%;
+	height: 84%;
+	position: absolute;
+	right: 4%;
+	background-color: #11A8BB;
+	color: white;
+	font-size: 2.5em;
+	border:none;
+	outline:none;
+	border-radius: 0.5em;
+}
+#btn1{
+	width: 90%;
+	height: 2.7em;
+	background-color: #11A8BB;
+	color: white;
+	font-size: 3em;
+	border:none;
+	outline:none;
+	border-radius: 0.2em;
+	margin-top: 2em;
+	margin-left: 5%;
+}

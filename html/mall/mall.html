@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+	<title>商城</title>
+	<link rel="stylesheet" type="text/css" href="../../css/api.css">
+	<style type="text/css">
+        html,body{
+            background-color:  #EEEFF1;
+            font-size: 14px;
+        }
+        *{
+            font-family: "微软雅黑";
+        }
+        /*··········头部········*/
+        header{
+            width: 100%;
+            text-align:center;
+            line-height: 3rem;
+            background-color: #89D3DE;
+            color: white;
+            font-size: 1.6rem;
+            position: relative;
+        }
+        #img1{
+            position: absolute;
+            left: 2%;
+            top: 7.5%;
+            width: 2.5rem;
+        }
+        #div1{
+            position: absolute;
+            width: 68%;
+            height: 2rem;
+            border:0.15rem solid #A7D6E0;
+            border-radius: 2rem;
+            left: 16%;
+            top: 12%;
+        }
+        #div1 img{
+            position: absolute;
+            left: 5%;
+            top: 13%;
+            width:1.5rem;
+        }
+        #div1 input{
+            position: absolute;
+            top: 15%;
+            left: 18%;
+            width: 80%;
+            height: 1.5rem;
+            font-size: 1.2rem;
+            background-color: #89D3DE;
+            border:none;
+            outline:none;
+            color: white;
+        }
+        /*placeholder颜色*/
+        #div1 input::-webkit-input-placeholder { /* WebKit browsers */ 
+           color: white; 
+        } 
+        :-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
+            color: white; 
+        } 
+        ::-moz-placeholder { /* Mozilla Firefox 19+ */ 
+            color: white; 
+        } 
+        :-ms-input-placeholder { /* Internet Explorer 10+ */ 
+            color: white; 
+        } 
+        #img2{
+            position: absolute;
+            right: 2%;
+            top: 6%;
+            width: 2.5rem;
+        }
+         /*·········正文·········*/
+        section{
+            position: relative;
+        }
+        ul{
+            width: 94%;
+            margin:3% auto;
+            margin-left: 4%;
+        }
+        ul li{
+            box-sizing: border-box;
+            height: 14rem;
+            float: left;
+            background-color: white;
+            width: 48%;
+            padding:0.5em;
+            margin-right: 2%;
+            margin-bottom: 2%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            position: relative;
+        }
+        ul>li>img{
+            width: 80%;
+            display: block;
+            margin: 0 auto;
+        }
+        ul>li>p{
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 5%;
+            position: absolute;
+            bottom: 11%;
+            display: block;
+            padding:3%;
+        }
+        ul>li>span:nth-child(3){
+            color: red;
+            font-size: 1em;
+            line-height: 1em;
+            position: absolute;
+            bottom: 5%;
+        }
+        ul>li>span:nth-child(4){
+            color: #ddd;
+            font-size: 1em;
+            line-height: 1em;
+            position: absolute;
+            bottom: 5%;
+            right: 5%;
+        }
+        ul:after{
+            content:"";
+            height:0;
+            visibility:hidden;
+            display:block;
+            clear:both;
+        }
+        /*回到顶部*/
+        #top{            
+            width:15%;
+            position:fixed;
+            bottom:10%;
+            right:2%;
+            display: none;
+        }
+        #top img{
+            width:100%;
+        }
+	</style>
+</head>
+<body>
+    <header>
+		<img id="img1" src="../../image/mall/car.png">
+		<div id="div1">
+			<img src="../../image/mall/sousuo.png">
+			<input id="searchInput" type="text" placeholder="关键字搜索">
+		</div>
+		<div id="div2">
+			<img id="img2" src="../../image/mall/other.png"><br />
+		</div>
+	</header>
+   <section>
+       <ul id="ul1">
+            <li>
+                <img src="../../image/mall/imgtest.png">
+                <p>%title%</p>
+                <span>%price%</span><span>%sold%</span>
+            </li>
+       </ul>
+   </section>
+   <a id="top"><img src="../../image/mall/totop.png" alt=""></a>
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript" src="../../script/apicloud.js"></script>
+<script type="text/javascript" src="../../script/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="../../js/mallscript.js"></script>
+<script>
+    apiready = function(){
+        /*下拉刷新*/
+        api.setRefreshHeaderInfo({  
+                loadingImg: 'widget://image/refresh.png',
+                bgColor: '#ccc',
+                textColor: '#fff',
+                textDown: '下拉可以刷新',
+                textUp: '松开立即刷新'
+            }, function(ret, err) {
+            setTimeout(function(){
+                api.refreshHeaderLoadDone()  
+            },1000);
+        });
+
+        /*上拉刷新*/
+        api.addEventListener({
+            name:'scrolltobottom',
+            extra:{
+            threshold:-10            //设置距离底部多少距离时触发，默认值为0，数字类型
+        }
+        }, function(ret, err) {
+            api.showProgress({
+                title: '商城加载中',
+                text: '稍等...',
+                modal: true
+            });
+            setTimeout(function(){
+                close();   //两秒后服务器返回数据
+            },1500)     
+        });
+    }  
+    /*关闭提示框*/
+    function close(){
+        api.hideProgress();
+    }
+</script>
+
+<script type="text/javascript">
+    
+    var oUl = $api.byId('ul1');//获取ul
+    var template = $api.html(oUl);//ul的innerHTML
+    var aLi = oUl.getElementsByTagName('li');//获取所有li
+    var str="";//初始化str
+    var rblank =/\s$/g;//空格正则    
+    
+    /*···································显示数据······························*/
+    
+    function showItem(){
+        for(var i = 0 ; i<items.length;i++){            
+            str += template.replace('%title%',items[i].title).replace('%price%',items[i].price).replace('%sold%',items[i].sold).replace('imgtest',items[i].img);
+        }
+        $api.html(oUl,str);
+    }
+    
+    /*执行显示数据*/
+    showItem();
+    
+    /*········································································*/
+    /*··································回到顶部·······························*/
+    
+    /*回到顶部显示隐藏*/
+    $(window).scroll( function() {
+        if(window.document.body.scrollTop>=100){
+            document.getElementById("top").style.display = "block";
+        }
+        else{
+            document.getElementById("top").style.display = "none";
+        }
+    });
+    
+    /*回到顶部按钮*/
+    $('#top').click(function(){
+        document.body.scrollTop = 0;
+    })
+    
+    /*·······································································*/
+    /*·································搜索···································*/
+    var oSerch = document.getElementById('searchInput');
+    $('input:text').blur(function(){
+        /*搜索不为空*/
+        if($('input:text').val()!=""){
+            /*清除所有*/
+            $('#ul1').children().remove();
+            str="";
+            /*遍历所有数据*/
+            for(var i=0;i<items.length;i++){               
+               
+                if(items[i].title.indexOf(oSerch.value) != -1){
+                    str += template.replace('%title%',items[i].title).replace('%price%',items[i].price).replace('%sold%',items[i].sold).replace('imgtest',items[i].img);
+                    $api.html(oUl,str);
+                    
+                    for(var j=0;j<aLi.length;j++){
+                    aLi[j].index=j;
+                    }
+                    /*动态添加的li添加点击事件*/
+                    $('li').click(function(){
+                        console.log(this.index);
+                        api.openWin({
+                            name:'mall2',
+                            url:'./mall2.html',
+                            pageParam: {
+                                name: "商品详情",
+                                index:this.index
+                            }            
+                        });
+                    })
+                }
+                
+            }
+            /*如果为多个空格*/
+            if(oSerch.value.match(rblank)){
+                str="";
+                $('#ul1').children().remove();
+                showItem();
+            }
+        }else{
+            str="";
+            $('#ul1').children().remove();
+            showItem();
+        }
+    })
+    /*·······································································*/
+    /*·······························商品点击打开新窗口·························*/
+    for(var i=0;i<aLi.length;i++){
+        aLi[i].index=i;
+    }
+    
+    /*动态添加的li添加点击事件*/
+    $('li').click(function(){
+        console.log(this.index);
+        api.openWin({
+            name:'mall2',
+            url:'./mall2.html',
+            pageParam: {
+                name: "商品详情",
+                index:this.index
+            }            
+        });
+    })
+
+</script>
+</html>

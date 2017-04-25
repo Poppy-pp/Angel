@@ -1,0 +1,74 @@
+﻿@charset "UTF-8";
+body{
+	background-color: #EEEFF1;
+	margin-top: 0;
+}
+/*··········头部········*/
+header{
+	width: 100%;
+	height: 10%;
+	text-align:center;
+	line-height: 5em;
+	background-color: #89D3DE;
+	color: white;
+	font-size: 1.6em;
+	position: relative;
+	font-family: "微软雅黑";
+}
+h1{
+	font-weight: normal;
+}
+.ico1{
+	width: 2em;
+	height:1.5em;
+	margin-left: 2em;
+	margin-top: -3em;
+	transform: rotate(90deg);
+	float: left;
+}
+#backimg{
+	width: 2.1875em;
+	position: absolute;
+	left: 1.175em;
+	top: 1.875em;
+	transform: rotateZ(90deg);
+}
+#tel{
+	position: absolute;
+	right: 1em;
+	top: 0.6375em;
+}
+#tel i{
+	font-size: 2.7em;
+	color: white;
+}
+/*············正文···········*/
+section{
+	width: 90%;
+	height: 30em;
+	background-color: white;
+	position: relative;
+	margin: 3em auto;
+	border-radius: 1em;
+}
+section p{
+	font-size: 2em;
+	color: black;
+	padding: 0.3em;
+	padding-left: 0.7em;
+}
+section p:nth-of-type(1){
+	height: 1em;
+	border-top-left-radius: 0.7em;
+	border-top-right-radius: 0.7em;
+	background-color: #11A8BB;
+}
+section p:nth-of-type(2){
+	font-size: 2em;
+	color: #11A8BC;
+	border-bottom: 0.2em;
+	border-style: dotted;
+	border-color: #ECEFF2;
+	padding: 0.3em;
+	padding-left: 0.7em;
+}

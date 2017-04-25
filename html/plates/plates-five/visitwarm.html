@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+
+<title>就诊提醒</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="../../../css/warmstyle.css" rel="stylesheet">
+</head>
+<body>
+<!-- 头部 -->
+<header>
+	
+	<div><i>就诊提醒</i></div>
+	<a href="../../../index.html"><img src="../../../image/yuyue/pic000@2x.png" class="ico1"></a>
+</header>
+
+<!-- 内容 -->
+<section>
+	<ul>
+		<a href="memberwarm.html"><li>会员预约信息</li>
+		<img src="../../../image/yuyue/pic00001@2x.png"></a>
+		<a href=""><li>预约挂号信息</li>
+		<img src="../../../image/yuyue/pic00001@2x.png"></a>
+		<a href=""><li>胎监检查信息</li>
+		<img src="../../../image/yuyue/pic00001@2x.png"></a>
+	</ul>
+</section>
+
+</body>
+<!-- 提示 -->
+<script type="text/javascript">
+	var aLi=document.getElementsByTagName("li");
+	for(var i = 0, length1 = aLi.length; i < length1; i++){
+		aLi[i].onclick = function(){
+			var index = Array.prototype.indexOf.call(aLi, this);
+        			if (index==0){
+        			}else {
+        				alert("该服务暂未开通"+ "\n" +"请选择-会员预约信息");
+        			}
+        		}
+        	}	
+</script>
+</html>

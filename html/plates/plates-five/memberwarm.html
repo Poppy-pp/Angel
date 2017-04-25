@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>会员预约提醒</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="../../../css/warmstyle.css" rel="stylesheet">
+</head>
+<body>
+ 
+<!-- 头部 -->
+<header>
+	<div><i>会员预约提醒</i></div>
+	<a href="visitwarm.html"><img src="../../../image/yuyue/pic000@2x.png" class="ico1"></a>
+</header>
+
+
+<!-- 内容 -->
+<section>
+	<div class="memberwarm">
+		<div class="bluetitle"><font style="font-size: 3em;">孕20-24周项目</font></div>
+		<div class="div">
+			<p>预约时间: 2017/04/20<br>预约医生: 李小清</p>
+			<img src="../../../image/就诊提醒-assets/time.png">
+			<img src="../../../image/就诊提醒-assets/doctor.png">
+			<img src="../../../image/就诊提醒-assets/arrow@2x.png" class="jiantou">
+		</div>
+	</div>
+</section>
+</body>
+<script type="text/javascript">
+	var oDiv=document.getElementsByClassName("div")[0];
+	oDiv.onclick=function(){
+		var conf=confirm("确认设置该条预约提醒吗？");
+		if (conf) {
+			alert("设置成功！");
+		}
+	}
+</script>
+</html>

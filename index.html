@@ -1,0 +1,222 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>安琪儿</title>
+    <link rel="stylesheet" type="text/css" href="./css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/style.css"/>
+    <script type="text/javascript" src="./script/jquery-3.1.1.min.js"></script>
+    <style>
+        header{ background-color: #f2f2f2; }
+        header ul li { height: 50px; line-height: 50px; text-align: center; display: none; color: #323237; position: relative;font-size: 18px;  }
+        header ul li.active{ display: block; }
+        #footer{  background-color: #f2f2f2; }
+        #footer ul li{  padding-top: 36px; padding-bottom: 4px; background: url() no-repeat center 2px; background-size: auto 30px; text-align: center; }
+        #footer ul li.active{ color: #6ab494; }
+        #footer ul li:nth-child(1){ background-image: url(./image/bottombtn0101.png); }
+        #footer ul li:nth-child(2){ background-image: url(./image/bottombtn0201.png); }
+        #footer ul li:nth-child(3){ background-image: url(./image/bottombtn0301.png); }
+        #footer ul li:nth-child(4){ background-image: url(./image/bottombtn0401.png); }
+        #footer ul li:nth-child(1).active{ background-image: url(./image/bottombtn0102.png); }
+        #footer ul li:nth-child(2).active{ background-image: url(./image/bottombtn0202.png); }
+        #footer ul li:nth-child(3).active{ background-image: url(./image/bottombtn0302.png); }
+        #footer ul li:nth-child(4).active{ background-image: url(./image/bottombtn0402.png); }
+
+        #api{height:40px;}
+        #api ul{height:40px; width:100%;     background-color: #89D3DE;}
+        #api ul li{height:40px; text-align: center; line-height:40px;   
+           display:block;width:49.7%;float: left;
+       }
+       #api ul li:first-child{
+        border-right:1px solid #0E8A98;
+    } 
+    #api ul li.active span{/*切换列表时 文字变化*/
+        display:inline-block; 
+        color: #11A8BB;
+        font-size: 1em;
+    }
+    #api ul li.active{/*切换列表时 背景颜色改变*/
+        background-color: #EEEFF1;
+    }
+</style>
+</head>
+<body>
+    <div id="wrap" class="flex-wrap flex-vertical">
+        <header id="header">
+            <ul>
+                <li class="border-b">安琪儿 </li>
+                <li class="border-b active">发现
+                 <div id="api">
+                  <ul>
+                    <li class="active"><span>母乳喂养</span></li>
+                    <li><span>育儿经验</span></li>
+                </ul>
+            </div>
+        </li>
+        <li class="border-b">商城</li>
+        <li class="border-b">我的</li>
+    </ul>
+</header>
+<div id="main" class="flex-con">
+
+</div>
+<div id="footer" class="border-t">
+    <ul class="flex-wrap" >
+        <li tapmode="hover" class="flex-con active" >首页</li>
+        <li tapmode="hover" class="flex-con" >发现</li>
+        <li tapmode="hover" class="flex-con" >商城</li>
+        <li tapmode="hover" class="flex-con" >我的</li>
+    </ul>
+</div>
+</div>
+</body>
+</html>
+<script type="text/javascript" src="script/api.js"></script>
+<script type="text/javascript" src="script/apicloud.js"></script>
+<script type="text/javascript">
+   var oApi=$api.byId("api"),
+   apiH=$api.offset(oApi).h,
+   apiLi=$api.domAll(oApi,"li");
+
+   var head=$api.byId("header"),
+        headH=$api.offset(head).h;//得到页头的高
+    var foot=$api.byId("footer"),
+        footH=$api.offset(foot).h;//得到页脚的高
+        
+    //var headaLi=$api.domAll(head, "li"),//得到页头列表
+    var headaLi=$api.domAll(".border-b"),//得到页头列表
+        arrheadaLi=Array.prototype.slice.call(headaLi);//集合转数组
+    var footaLi=$api.domAll(foot, "li"),//得到页脚列表
+        arrfootaLi=Array.prototype.slice.call(footaLi);//集合转数组
+
+
+        /*页脚对应的名字*/
+        var pageFrame={
+            0:"home",
+            1:"find",
+            2:"mall",
+            3:"my"
+        }
+
+
+/*切换class的封装
+      arrLike  -->节点集合
+      index    -->索引
+      cls      -->class
+      */
+      function forEach(arrLike,index,cls){
+        for(var i=0; i<arrLike.length; i++){
+            $api.removeCls(arrLike[i], cls);
+        }
+        $api.addCls(arrLike[index], cls);
+    }
+
+
+//  发现——循环切换点击
+for(var i=0; i<apiLi.length; i++){
+    apiLi[i].index=i;
+    apiLi[i].onclick=function(){
+        api.setFrameGroupIndex({
+            name: 'API',
+            index:this.index
+        });
+    }   
+}   
+
+//  循环遍历页脚Btn,添加事件
+for(var i=0; i<arrfootaLi.length; i++){
+    arrfootaLi[i].index=i;
+    arrfootaLi[i].onclick=function(){
+       randomSwitchBtn(this.index);
+   }   
+}
+
+
+
+//  函数开始
+apiready = function() {
+        var winH=api.winHeight-footH-headH;//得到内容的高=整个窗口的高度-页脚高-页头高
+        
+
+        //调用方法
+        window.randomSwitchBtn = function(index) {
+
+
+            //关闭之前的页面
+            arrfootaLi.forEach(function(item,index2){
+                if(index == index2){
+                    //return;
+                }else {
+                    api.closeFrame({
+                        name : pageFrame[index2]
+                    });
+                    api.closeFrameGroup({
+                        name : "API",
+                    });
+                }
+            }); 
+
+         if(index == 1){//如果点击了 切换
+            api.openFrameGroup({
+                name : "API", 
+                scrollEnabled : true,
+                rect : {
+                    x : 0, 
+                    y : headH+apiH, 
+                    w : "auto", 
+                    h : winH-apiH
+                },
+                frames:[{
+                    name: 'FirstAPI',
+                    url: './html/find/FirstAPI.html',
+                },
+                {
+                    name: 'SecondAPI',
+                    url: './html/find/SecondAPI.html',
+                }]
+            }, function(ret, err) {
+                var index = ret.index;
+                forEach(apiLi,index, 'active')
+            });
+            }else{//如果点击其他页 //打开点击的页面
+                apicloud.openFrame(pageFrame[index], "./html/" + pageFrame[index] + "/" + pageFrame[index] + ".html",headH,winH);                       
+            }
+
+//改变class
+for(var i=0;i<footaLi.length;i++){
+    $api.removeCls(headaLi[i], "active");
+    $api.removeCls(footaLi[i], "active");
+}
+$api.addCls(headaLi[index], "active");
+$api.addCls(footaLi[index], "active");
+
+
+
+
+
+
+
+        }//randomSwitchBtn函数结束
+        randomSwitchBtn(0);
+        
+    }//apiready结束
+
+
+//引导页主要流程
+// if(不是第一次打开){
+//     通过writeFile写入文件内容 打开引导页
+// }else{
+//      randomSwitchBtn(0);进入主界面
+// }
+
+// if(data){
+//     randomSwitchBtn(0);
+// }else {
+//     api.writeFile({
+//         path:"fs://a.txt",
+//         data:"writeFile测试内容"
+//     });
+// }
+</script>
